@@ -1,35 +1,24 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Header from './Header.jsx'
+import Buttons from './Buttons.jsx'
+import Post from './Post.jsx'
+import Footer from './Footer.jsx'
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+function App(props) {
+  return(
+  <div>
+    <Header/>
+    <Buttons/>
+    <Post type = "General" hcolor = "#597567" user = "asdf"/>
+    <Post type = "Event" hcolor = "#755959" user = "womp womp"/>
+    <Post type = "Club" hcolor = "#595d75" user = "Harold"/>
+    <Post type = "Study Help" hcolor = "#7a7732" user = "cbaker_04"/>
+    <Post type = "Missed Connections" hcolor = "#725975" user = "asdf"/>
+    <Footer/>
+  </div>);
 }
 
 export default App

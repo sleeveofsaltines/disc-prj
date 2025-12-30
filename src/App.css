@@ -1,42 +1,127 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+
+body,
+div,
+html {
+  width: 100%;
+  margin: 0;
+  background-color: #e8e8fc;
+  color: #000000;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.active{
+  background: #202033;
+  border-radius: 999px;
+  box-shadow: #5e5df0 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 24px;
+  margin: 1% 1% 2% 1%;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 4px 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+}
+
+.inactive{
+  background: #9f9fc2;
+  border-radius: 999px;
+  box-shadow: #5e5df0 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 24px;
+  margin: 1% 1% 2% 1%;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 4px 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #202033;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: large;
+}
+
+.navbar a {
+  color: #e8e8fc;
+  text-decoration: none;
+  padding: 14px 14px;
+  margin-right: 0px;
+  font-size: 25px;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.navbar a:hover {
+  background-color: #4c63af;
+  color: black;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.navbar .logo {
+  display: flex;
+  justify-content: center;
+  color: #202033;
+}
+
+.navbar .menu {
+  display: flex;
+}
+
+.navbar.responsive .menu {
+  display: block;
+}
+
+.navbar .icon {
+  display: none;
+}
+
+@media screen{
+  .navbar .icon {
+    display: block;
+    cursor: pointer;
   }
-  to {
-    transform: rotate(360deg);
+
+  .navbar .menu {
+    display: none;
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .navbar.responsive .menu {
+    display: flex;
+    flex-direction: column;
+    background-color: #9f9fc2;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    height: auto;
   }
-}
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  .navbar.responsive .menu a {
+    padding: 10px 20px;
+  }
 }
