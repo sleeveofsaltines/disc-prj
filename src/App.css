@@ -3,6 +3,7 @@ body,
 div,
 html {
   width: 100%;
+  min-width: screen;
   margin: 0;
   background-color: #e8e8fc;
   color: #000000;
@@ -124,4 +125,58 @@ html {
   .navbar.responsive .menu a {
     padding: 10px 20px;
   }
+}
+
+.footn{
+  background-color: #202033;
+  color:#4c63af;
+  padding:20px;
+  margin:20px 0px 0px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content:center;
+  align-items: center;
+  bottom: 0px;
+
+}
+
+.foot_lnks{
+  padding:0px 20px 0px;
+}
+
+.foot_icon{
+  width:20px;
+  height:20px;
+  padding:10px 10px 0px;
+}
+
+.foot_div{
+  background-color: #202033;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content:center;
+  align-items: center;
+}
+
+.view_card{
+  display: flex;
+}
+
+.no_card{
+  display: none;
+}
+
+.cardlook{
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  width: 300px;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  position: relative;
+  margin: 5px auto auto auto;
+  padding: 2px;
+  text-align: center;
 }

@@ -1,11 +1,10 @@
-function NavBar(){
-    function openNav() {
-      document.getElementById("mySidenav").style.width = "250px";
-    }
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
-    function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
-    }
+
+function NavBar(){
+
+    const navigate = useNavigate();
 
     function toggleMenu() {
       let navbar = document.getElementById("myNavbar");
@@ -14,11 +13,11 @@ function NavBar(){
 
     return(
         <div className="navbar" id="myNavbar">
-            <div id="mySidenav" className="menu">
-                <a href="#">Messages</a>
-                <a href="#">Following and Followers</a>
-                <a href="#">Pinned Posts</a>
-                <a href="#">Settings</a>
+            <div className="menu">
+                <a onClick={() => navigate("/messages")} >Messages</a>
+                <a onClick={() => navigate("/following")}>Following and Followers</a>
+                <a onClick={() => navigate("/pinned")} >Pinned Posts</a>
+                <a onClick={() => navigate("/settings")}>Settings</a>
             </div>
             <a className="icon" onClick={toggleMenu}> &#9776; </a>
         </div>

@@ -9,6 +9,9 @@ function Header(){
         alignItems: "center",
         flexDirection: "row",
         fontSize:"small",
+        position:"sticky",
+        top:"0",
+        zIndex:"5",
     }
     const img_style = {
         height: "8vw",
@@ -16,6 +19,7 @@ function Header(){
         maxHeight: "40px",
         padding:"14px 0px 14px 10px",
     }
+    
     
     return(
         <header style = {style}>

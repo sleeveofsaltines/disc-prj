@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import Cards from './Cards.jsx'
 
-function Post({hcolor, user}){
+
+
+function Post({hcolor, user, idnum, postText, postImg}){
     const style = {
         display: "flex",
         flexDirection: "column",
@@ -13,11 +16,13 @@ function Post({hcolor, user}){
         margin: "30px auto auto auto",
         width: "85%",
         maxWidth: "600px",
+        minWidth:"screen",
         position: "relative",
+        zIndex:"1",
     }
 
     const p_style = {
-        padding: "3% 3% 4% 3%",
+        padding: "2% 3% 3% 3%",
         backgroundColor: "#ffffff",
     }
 
@@ -63,6 +68,7 @@ function Post({hcolor, user}){
         left: "3px",
         width: "35px",
         height: "21px",
+        zIndex:"2",
         }
 
     const usrname = {
@@ -70,7 +76,30 @@ function Post({hcolor, user}){
         left: "40px",
         bottom: "-9px",
         color: "#ffffff",
+        zIndex:"2",
         }
+
+    const img_style = {
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-evenly",
+        margin: "auto auto",
+        width: "90%",
+        maxWidth: "550px",
+        maxHeight: "1000px",
+        position: "relative",
+        zIndex:"1",
+        padding: "0% 0% 1% 0%",
+    }
+
+    const showCard = () => {
+        setCardVis("view_card")
+    }
+
+    function unshowCard() {
+        setCardVis("no_card")
+    }
+    const [cardVis, setCardVis] = useState("no_card")
 
     const [pinSrc, setPinSrc] = useState('https://pic.onlinewebfonts.com/user/icons_7947.svg?width=5');
 
@@ -91,18 +120,26 @@ function Post({hcolor, user}){
     }
     
     return(
+        <div>
         <span style={style}>
             <span style={lcircle}></span>
             <span style={rcircle}></span>
             <p style={p_style}>
-                A post any user can make, can be text or an image. A post any user can make,
-                can be text or an image. A post any user can make, can be text or an image.
+                <img style={img_style} src={postImg} alt="" />
+                {postText}
             </p>
-            <img src="https://static.vecteezy.com/system/resources/previews/019/879/186/original/user-icon-on-transparent-background-free-png.png" alt="User icon" style={avatar}/>
+            <input type='image' 
+            onMouseOver={() => showCard()}
+            onMouseLeave={() => unshowCard()}
+            src="https://static.vecteezy.com/system/resources/previews/019/879/186/original/user-icon-on-transparent-background-free-png.png" alt="User icon" style={avatar}/>
             <span style={usrname}>{user}</span>
-            <input type="image" src={pinSrc} style={pin} onClick={changePinSrc}/>
+            <input type="image" src={pinSrc} style={pin} onClick={changePinSrc} alt = "A push pin" />
             <input type ="image" src={postSrc}  onClick={changePostSrc} alt="Two post-its with a pin" style={post_it}/>
         </span>
+        <span className = {cardVis}>
+            <Cards user_id={idnum}/>
+        </span>
+        </div>
     );
 }
 export default Post
