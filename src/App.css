@@ -137,6 +137,7 @@ html {
   justify-content:center;
   align-items: center;
   bottom: 0px;
+  
 
 }
 
@@ -178,5 +179,9 @@ html {
   position: relative;
   margin: 5px auto auto auto;
   padding: 2px;
+  text-align: center;
+}
+
+.unbuilt{
   text-align: center;
 }

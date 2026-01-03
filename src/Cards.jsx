@@ -22,11 +22,11 @@ const Cards = ({user_id}) => {
   }, [])
 
   if (loading) {
-    return <p>Loading data...</p>
+    return <p className='cardlook'>Loading data...</p>
   }
 
   if (error) {
-    return <p>Error fetching data: {error.message}</p>
+    return <p className='cardlook'>Error fetching data: {error.message}</p>
   }
 
   return (
